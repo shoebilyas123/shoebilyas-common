@@ -62,15 +62,16 @@ export async function getAllBlogs() {
           title
           summary
           writtenAt
+          isNotified
         }
       }
     `;
-
     const { blogs } = await client.request(query);
     const transformedBlogs: IBlogItem[] = blogs.map((blog: any) => ({
       ...blog,
       createdAt: blog.writtenAt,
     }));
+    console.log({ transformedBlogs });
     return transformedBlogs;
   } catch (err) {
     console.log(err);

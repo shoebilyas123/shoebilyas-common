@@ -11,4 +11,5 @@ export interface IBlogItem {
   summary: string;
   slug: string;
   createdAt: Date;
+  isNotified: boolean;
 }
