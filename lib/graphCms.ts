@@ -10,6 +10,7 @@ export async function getBlogBySlug(slug: string) {
     const query = gql`
   {
     blog(where: {slug: "${slug}"}) {
+      id
       title
       content {
         html
