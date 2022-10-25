@@ -7,11 +7,13 @@ const Button: React.FC<React.HTMLProps<HTMLButtonElement>> = ({
   children,
   className,
   disabled,
+  style,
 }) => {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
+      style={{ ...style }}
       className={`${
         disabled
           ? "cursor-not-allowed bg-zinc-300 hover:shadow-none"
