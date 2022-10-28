@@ -19,8 +19,8 @@ const Button: React.FC<React.HTMLProps<HTMLButtonElement>> = ({
           ? "cursor-not-allowed bg-zinc-300 hover:shadow-none"
           : className
           ? className
-          : classes["custom-button"]
-      } w-fit flex items-center text-white rounded-md px-5 py-1 hover:shadow outline-none`}
+          : `${classes["custom-button"]}  w-fit flex items-center text-white rounded-md px-5 py-1 hover:shadow outline-none`
+      }`}
     >
       {children}
     </button>
