@@ -85,6 +85,9 @@ const Navbar: React.FC<IProps> = ({ isAdmin }) => {
             </ul>
           </div>
         )}
+        <div className="md:hidden sm:block absolute right-2">
+          {renderThemeChange()}
+        </div>
       </div>
     </nav>
   );
