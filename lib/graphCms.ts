@@ -17,6 +17,7 @@ export async function getBlogBySlug(slug: string) {
       }
       writtenAt
       summary
+      slug
     }
   }
   `;
