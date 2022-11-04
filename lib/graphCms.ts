@@ -69,10 +69,15 @@ export async function getAllBlogs() {
       }
     `;
     const { blogs } = await client.request(query);
-    const transformedBlogs: IBlogItem[] = blogs.map((blog: any) => ({
-      ...blog,
-      createdAt: blog.writtenAt,
-    }));
+    const transformedBlogs: IBlogItem[] = blogs
+      .map((blog: any) => ({
+        ...blog,
+        createdAt: blog.writtenAt,
+      }))
+      .sort((a: IBlogItem, b: IBlogItem) =>
+        a.createdAt < b.createdAt ? 1 : -1
+      );
+
     console.log({ transformedBlogs });
     return transformedBlogs;
   } catch (err) {
